@@ -1,5 +1,5 @@
 import express from 'express'
-import { data } from './test.js'
+import { data } from './data.js'
 
 const app = express()
 app.set('view engine', 'ejs')

@@ -11,14 +11,15 @@
 
 <body>
     <ul class="tree">
+        <% data.map(item=>{ %>
         <li>
             <div id='card'>
                 <div id="card-top">
                     <img src="img.jpg" alt="" id='card-img'>
                     <div id='card-top-data'>
-                        <div id='card-user'><%= data[0].name.first %> <%= data[0].name.last %></div>
-                        <div id='card-company'><%= data[0].company %></div>
-                        <div id='card-address'><%= data[0].address %></div>
+                        <div id='card-user'><%= item.name.first %> <%= item.name.last %></div>
+                        <div id='card-company'><%= item.company %></div>
+                        <div id='card-address'><%= item.address %></div>
                         <div id='icons'>
                             <i class='fa fa-phone'></i>
                             <i class='fa fa-envelope'></i>
@@ -27,12 +28,12 @@
                 </div>
                 <div id="card-bottom">
                     <div id='card-about-title'>About</div>
-                    <div id='card-about-desc'><%= data[0].about %></div>
-                    <div id="registered"><%= data[0].registered %></div>
+                    <div id='card-about-desc'><%= item.about %></div>
+                    <div id="registered"><%= item.registered %></div>
                 </div>
             </div>
             <ul>
-                <% data[0].nodes.map(node=>{ %>
+                <% item.nodes.map(node=>{ %>
                 <li>
                     <div id='card'>
                         <div id="card-top">
@@ -82,6 +83,7 @@
                 <% }) %>
             </ul>
         </li>
+        <% })%>
     </ul>
 </body>
 
