@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest API</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <ul class="tree">
+        <li>
+            <div id='card'>
+                <div id="card-top">
+                    <img src="img.jpg" alt="" id='card-img'>
+                    <div id='card-top-data'>
+                        <div id='card-user'><%= data[0].name.first %> <%= data[0].name.last %></div>
+                        <div id='card-company'><%= data[0].company %></div>
+                        <div id='card-address'><%= data[0].address %></div>
+                        <div id='icons'>
+                            <i class='fa fa-phone'></i>
+                            <i class='fa fa-envelope'></i>
+                        </div>
+                    </div>
+                </div>
+                <div id="card-bottom">
+                    <div id='card-about-title'>About</div>
+                    <div id='card-about-desc'><%= data[0].about %></div>
+                    <div id="registered"><%= data[0].registered %></div>
+                </div>
+            </div>
+            <ul>
+                <% data[0].nodes.map(node=>{ %>
+                <li>
+                    <div id='card'>
+                        <div id="card-top">
+                            <img src="img.jpg" alt="" id='card-img'>
+                            <div id='card-top-data'>
+                                <div id='card-user'><%= node.name.first %> <%= node.name.last %></div>
+                                <div id='card-company'><%= node.company %></div>
+                                <div id='card-address'><%= node.address %></div>
+                                <div id='icons'>
+                                    <i class='fa fa-phone'></i>
+                                    <i class='fa fa-envelope'></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="card-bottom">
+                            <div id='card-about-title'>About</div>
+                            <div id='card-about-desc'><%= node.about %></div>
+                            <div id="registered"><%= node.registered %></div>
+                        </div>
+                    </div>
+                    <ul>
+                        <% node.nodes.map(subnode=>{ %>
+                        <li>
+                            <div id='card'>
+                                <div id="card-top">
+                                    <img src="img.jpg" alt="" id='card-img'>
+                                    <div id='card-top-data'>
+                                        <div id='card-user'><% subnode.name.first %> <%= subnode.name.last %></div>
+                                        <div id='card-company'><%= subnode.company %></div>
+                                        <div id='card-address'><%= subnode.address %></div>
+                                        <div id='icons'>
+                                            <i class='fa fa-phone'></i>
+                                            <i class='fa fa-envelope'></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="card-bottom">
+                                    <div id='card-about-title'>About</div>
+                                    <div id='card-about-desc'><%= subnode.about %></div>
+                                    <div id="registered"><%= subnode.registered %></div>
+                                </div>
+                            </div>
+                        </li>
+                        <% }) %>
+                    </ul>
+                </li>
+                <% }) %>
+            </ul>
+        </li>
+    </ul>
+    <script src="script.js"></script>
+</body>
+
+</html>
