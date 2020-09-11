@@ -21,8 +21,9 @@
                         <div id='card-company'><%= item.company %></div>
                         <div id='card-address'><%= item.address %></div>
                         <div id='icons'>
-                            <i class='fa fa-phone'></i>
-                            <i class='fa fa-envelope'></i>
+                            <i class='fa fa-phone' onclick="location.href='tel:<item.phone'"></i>
+                            <!-- use callto:<item.phone for skype -->
+                            <i class='fa fa-envelope' onclick="location.href='mailto:<% item.email %>'"></i>
                         </div>
                     </div>
                 </div>
@@ -43,8 +44,8 @@
                                 <div id='card-company'><%= node.company %></div>
                                 <div id='card-address'><%= node.address %></div>
                                 <div id='icons'>
-                                    <i class='fa fa-phone'></i>
-                                    <i class='fa fa-envelope'></i>
+                                    <i class='fa fa-phone' onclick="location.href='tel:<item.phone'"></i>
+                                    <i class='fa fa-envelope' onclick="location.href='mailto:<% item.email %>'"></i>
                                 </div>
                             </div>
                         </div>
@@ -65,8 +66,9 @@
                                         <div id='card-company'><%= subnode.company %></div>
                                         <div id='card-address'><%= subnode.address %></div>
                                         <div id='icons'>
-                                            <i class='fa fa-phone'></i>
-                                            <i class='fa fa-envelope'></i>
+                                            <i class='fa fa-phone' onclick="location.href='tel:<% item.phone %>'"></i>
+                                            <i class='fa fa-envelope'
+                                                onclick="location.href='mailto:<% item.email %>'"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -85,6 +87,11 @@
         </li>
         <% })%>
     </ul>
+
+    <script>
+        document.querySelector('.fa-envelope').setAttribute('title', 'Email')
+        document.querySelector('.fa-phone').setAttribute('title', 'Phone')
+    </script>
 </body>
 
 </html>

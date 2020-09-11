@@ -60,8 +60,14 @@ body {
     height:40px;
     border-radius:50%;
     border: 2px solid #f7fbfc;
-    line-height: 40px;
     color:#c9d5d8;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+#icons *:hover {
+    color:white;
+    background: #c9d5d8;
 }
 
 #card-about-title {
