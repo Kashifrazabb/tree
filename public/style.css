@@ -7,6 +7,11 @@ body {
     background: rgb(229,239,243);
 }
 
+::selection {
+    background: crimson;
+    color:#fff;
+}
+
 #card {
     position: relative;
     width:400px;
@@ -87,13 +92,15 @@ body {
     right:40px;
 }
 
-.tree {
-    list-style:none;
-}
-
 ul:not(.tree) {
     border-left:1px solid #000;
-    list-style-image: url('./arrow.png');
+    list-style-image:url('./line.png');
+}
+
+.tree {
+    list-style:none;
+    display: flex;
+    justify-content: center;
 }
 
 
